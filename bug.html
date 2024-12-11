@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be hidden initially.
+  </div>
+
+  <script>
+    // Incorrect use of innerHTML, leading to unexpected behavior
+    document.getElementById("myDiv").innerHTML = ""; //This clears the content and it can't be shown again.
+    document.getElementById("myDiv").style.display = "none";
+    setTimeout(function() {
+      document.getElementById("myDiv").style.display = "block";
+    }, 3000);
+  </script>
+</body>
+</html>
